@@ -1,0 +1,53 @@
+##Data input:
+
+#Insert sub committee information
+insert into Sub_Committee values("Registration", "Xinbo", "Chen");
+insert into Sub_Committee values("Promotion", "Zhen", "Meng");
+insert into Sub_Committee values("Program", "Jianan", "Lin");
+
+#Insert committee member information
+insert into Committee_Members  values ('R01', 'Xinbo', 'Chen', 'Registration');
+insert into Committee_Members  values ('R02', 'Meng', 'Zhen', 'Registration');
+insert into Committee_Members  values ('P01', 'Meng', 'Zhen', 'Promotion');
+
+insert into membersFromCommittee values('R01', 'Xinbo', 'Chen', 'Registration');
+insert into membersFromCommittee values ('R02', 'Meng', 'Zhen', 'Registration');
+
+
+#Insert attendees information
+insert into attendees values('S01','Tom','Wang','asd@gmail.com','Student','50');
+insert into attendees values('S02','Xinbo','Chen','akg@gmail.com','Student','50');
+insert into attendees values('P01','Josh','Mart','mjosh@gmail.com','Professional','100');
+insert into attendees values('SP01','Steve','Jobs','apple@apple.com','Sponsor','free');
+
+#Insert Hotel room information
+insert into Hotel_Room values ('101','2');
+insert into Hotel_Room values ('102','1');	 
+
+#Insert student information
+insert into Students values('S01','Tom','Wang','101');
+insert into Students values('S02','Xinbo','Chen','102');
+
+#Insert Level of sponsor
+insert into Level_Table values('Platinum','10000',5);
+insert into Level_Table values('Gold','5000',4);
+insert into Level_Table values('Silver','3000',3);
+insert into Level_Table values('Bronze','5000',0);	 	
+
+#Insert company information
+insert into Company values('Apple','Platinum','10000', 5);
+insert into Company values('HP','Gold','5000', 4);
+
+#Insert Job information
+insert into Job_Post values( 'A01', 'Apple', 'Software Developer','Waterloo','ON', '120'); 
+insert into Job_Post values( 'H01', 'HP', 'Hardware tester','Ottawa','ON', '50'); 
+
+#Insert sponsors information
+insert into Sponsors values('SP01','Steve','Jobs','Apple', 2);
+
+#Insert professionals information
+insert into Professionals values('P01','Josh','Mart','Robotics');
+
+#Insert conference schedule information
+insert into Conference_Schedule values('2019-02-07', '13:00:00', '14:30:00', 'P01','Josh','Mart', '001', 'Into to Robotics', 'Goodwin', '201');
+insert into Conference_Schedule values('2019-02-07', '13:00:00', '14:30:00', 'S01','Tom','Wang', '002', 'Into to CS', 'Goodwin', '203');
