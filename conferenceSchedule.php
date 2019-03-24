@@ -12,7 +12,6 @@
 	?>
 	<form action="conferenceSchedule.php" method="post">
 		<select name = "date" method = "post">
-			#<option>All Date</option>
 			<?php
 				$sql = "select distinct date from Conference_Schedule";
 				$stmt = $pdo->prepare($sql);   #create the query
