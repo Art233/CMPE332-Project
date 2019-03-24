@@ -14,30 +14,33 @@
 	<?php	
 		echo "<p>Students List</p>";
 		echo "<table><tr><th>ID</th><th>first_name</th><th>last_name</th><th>attendee_type</th></tr>";
-		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = Student";
+		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = 'Student'";
 		$stmt = $pdo->prepare($sql);
 		$stmt -> execute();
 		while ($row = $stmt->fetch()) {
-			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr></table>";
+			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr>";
 		}
+		echo "</table>";
 		
 		echo "<p>Professionals List</p>";
 		echo "<table><tr><th>ID</th><th>first_name</th><th>last_name</th><th>attendee_type</th></tr>";
-		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = Professional";
+		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = 'Professional'";
 		$stmt = $pdo->prepare($sql);
 		$stmt -> execute();
 		while ($row = $stmt->fetch()) {
-			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr></table>";
+			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr>";
 		}
+		echo "</table>";
 		
 		echo "<p>Sponsors List</p>";
 		echo "<table><tr><th>ID</th><th>first_name</th><th>last_name</th><th>attendee_type</th></tr>";
-		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = Sponsor";
+		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = 'Sponsor'";
 		$stmt = $pdo->prepare($sql);
 		$stmt -> execute();
 		while ($row = $stmt->fetch()) {
-			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr></table>";
+			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr>";
 		}
+		echo "</table>";
 	?>
 
 </body>
