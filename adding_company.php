@@ -45,11 +45,16 @@
 				$totalmail = $row["total_mail"];
 				$amountofmoney = $row["amount_of_money"];
 			}
-			try
-			$sql = "INSERT INTO company (company_name, sponsor_level, amount_of_money,total_mail) VALUES ('$companyname','$level','$amountofmoney','$totalmail')";
-			$stmt= $pdo->prepare($sql);
-			$stmt->execute();
-			echo"<p>Done</p>";
+			try{
+				$sql = "INSERT INTO company (company_name, sponsor_level, amount_of_money,total_mail) VALUES ('$companyname','$level','$amountofmoney','$totalmail')";
+				$stmt= $pdo->prepare($sql);
+				$stmt->execute();
+				echo"<p>Done</p>";
+			}
+			catch(PDOException $e){
+				echo"<p>INVALID, already inside the database, please re-input</p>";
+			}
+			
 		}
 	?>
 
