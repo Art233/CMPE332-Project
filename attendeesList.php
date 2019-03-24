@@ -12,31 +12,31 @@
 		$pdo = new PDO('mysql:host=localhost;dbname=332project', "root", "");
 	?>
 	<?php	
-		echo "<h1>Students List</h1>";
+		echo "<p>Students List</p>";
 		echo "<table><tr><th>ID</th><th>first_name</th><th>last_name</th><th>attendee_type</th></tr>";
 		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = Student";
 		$stmt = $pdo->prepare($sql);
 		$stmt -> execute();
 		while ($row = $stmt->fetch()) {
-			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr>";
+			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr></table>";
 		}
 		
-		echo "<h2>Professionals List</h2>";
+		echo "<p>Professionals List</p>";
 		echo "<table><tr><th>ID</th><th>first_name</th><th>last_name</th><th>attendee_type</th></tr>";
 		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = Professional";
 		$stmt = $pdo->prepare($sql);
 		$stmt -> execute();
 		while ($row = $stmt->fetch()) {
-			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr>";
+			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr></table>";
 		}
 		
-		echo "<h3>Sponsors List</h3>";
+		echo "<p>Sponsors List</p>";
 		echo "<table><tr><th>ID</th><th>first_name</th><th>last_name</th><th>attendee_type</th></tr>";
 		$sql = "select ID, first_name, last_name, attendee_type from Attendees where attendee_type = Sponsor";
 		$stmt = $pdo->prepare($sql);
 		$stmt -> execute();
 		while ($row = $stmt->fetch()) {
-			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr>";
+			echo "<tr><td>".$row["ID"]."</td><td>".$row["first_name"]."</td><td>".$row["last_name"]."</td><td>".$row["attendee_type"]."</td></tr></table>";
 		}
 	?>
 
