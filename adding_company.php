@@ -37,7 +37,7 @@
 		if(isset($_POST['submit'])){
 			$companyname = $_POST['companyname'];
 			$level = $_POST['level'];
-			$result = isset($_POST['sponsor_level'])?$_POST['sponsor_level']:'';
+			//$result = isset($_POST['sponsor_level'])?$_POST['sponsor_level']:'';
 			$sql = "select total_mail,amount_of_money from level_table where sponsor_level = ?";
 			$stmt = $pdo->prepare($sql);   #create the query
 			$stmt->execute([$level]);   #bind the parameters
