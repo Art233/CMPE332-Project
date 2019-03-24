@@ -13,7 +13,7 @@
 	?>
 	<?php	
 		echo "<p><h1>Sponsors List with Level of Sponsorship</h1></p>";
-		echo "<table><tr><th>company_name</th><th>sponsor_level</th></tr></table>";
+		echo "<table><tr><th>company_name</th><th>sponsor_level</th></tr>";
 		$sql = "select company_name, sponsor_level from Company";
 		$stmt = $pdo->prepare($sql);
 		$stmt -> execute();
