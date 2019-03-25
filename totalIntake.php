@@ -12,7 +12,7 @@
 		$pdo = new PDO('mysql:host=localhost;dbname=332project', "root", "");
 	?>
 	<?php	
-		echo "<p>Total Intake from Attendees</p>";
+		echo "<p>Intake from Attendees</p>";
 		echo "<table><tr><th>$ Total Intake</th></tr>";
 		$sql = "select sum(attending_rate) from Attendees ";
 		$stmt = $pdo->prepare($sql);
@@ -23,7 +23,7 @@
 		}
 		echo "</table>";
 		
-		echo "<p>Total Intake from Sponsors</p>";
+		echo "<p>Intake from Sponsors</p>";
 		echo "<table><tr><th>$ Total Intake</th></tr>";
 		$sql = "select sum(amount_of_money) from Company ";
 		$stmt = $pdo->prepare($sql);
