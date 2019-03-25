@@ -57,9 +57,10 @@
 	<br>
 	<a href="logout.php">Logout</a>
 	<br>
+	<br>
 	<?php
 		date_default_timezone_set("America/New_York");
-		echo "Last visit at " . date("h:i:sa");
+		echo "Last update time: " . date("h:i:sa");
 	?>
 
 
