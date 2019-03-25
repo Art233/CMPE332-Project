@@ -33,10 +33,6 @@
 		<button type = "submit" name = "submit" value = "submit">Submit</button>
 	</form>
 	
-	<?php
-		date_default_timezone_set("America/New_York");
-		echo "Last update time: " . date("h:i:sa");
-	?>
 	<br>
 	<a href = "main.php">Main Manu</a>
 	<a href="logout.php">Logout</a>
