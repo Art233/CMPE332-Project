@@ -23,30 +23,38 @@ create table membersFromCommittee(
 	foreign key(committee_name) references Sub_Committee (committee_name) on delete cascade
 	);
 
+Create Table attendee_type(
+		attendee_type varchar(100) not null;
+		attending_rate int(100) not null;
+		primary key(attendee_type,attending_rate)
+	);
+	
 Create Table Attendees(
-	 ID varchar(10) not null,
+	 ID int(8) not null AUTO_INCREMENT ,
 	 first_name varchar(100) not null, 
 	 last_name varchar(100) not null,
 	 email varchar(255) not null,
-	 attendee_type varchar(100) not null,
-     attending_rate varchar(100) not null,
-	 primary key(ID)
+	 attendee_type varchar(100),
+     attending_rate int(100),
+	 primary key(ID),
+	 foreign key (attendee_type,attending_rate) references attendee_type(attendee_type,attending_rate) on update cascade
 	 );	
-	 
+
+
 Create Table Hotel_Room(
-	room_number varchar(5) not null ,
+	room_number varchar(5) not null AUTO_INCREMENT,
 	num_of_bed integer not null,
 	primary key(room_number)
 	);
 
 Create Table Students(
-	ID varchar(10) not null,
+	ID int(8) not null,
 	first_name varchar(100) not null, 
 	last_name varchar(100) not null,
 	room_number varchar(5),
 	primary key(ID),
 	foreign key(ID) references attendees(ID) on delete cascade,
-	foreign key(room_number) references Hotel_Room (room_number) on delete set null
+	foreign key(room_number) references Hotel_Room (room_number) on update cascade
 	);	
 	
 Create Table Level_Table(
@@ -77,7 +85,7 @@ Create Table Job_Post(
 	 );
 	 
 Create Table Sponsors(
-	 ID varchar(10) not null,
+	 ID int(8) not null,
 	 first_name varchar(100) not null, 
 	 last_name varchar(100) not null,
 	 company_name varchar(10) not null, 
@@ -87,7 +95,7 @@ Create Table Sponsors(
 	 );
 
 Create Table Professionals(
-	 ID varchar(10) not null,
+	 ID int(8) not null,
 	 first_name varchar(100) not null, 
 	 last_name varchar(100) not null,
 	 specialization varchar(100),
@@ -98,7 +106,7 @@ Create Table Conference_Schedule(
 	 date date,
 	 start_time time,
 	 end_time time,
-	 speaker_id varchar(10),
+	 speaker_id int(8),
 	 speaker_front_name varchar(100),
 	 speaker_last_name varchar(100),
 	 section_id varchar(10) not null,
