@@ -1,6 +1,7 @@
 <?php
 		require 'connection.php';
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 <link href="web.css" type="text/css" rel="stylesheet" >
