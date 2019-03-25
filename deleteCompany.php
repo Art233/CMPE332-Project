@@ -31,9 +31,19 @@
 <?php
 	if(isset($_POST['submit'])){
 			$result = $_POST['company'];
+			
+			$sql = "delete from Attendees where ID in (select ID from Sponsors where company_name = ?)";
+			$stmt = $pdo->prepare($sql);   #create the query
+			$stmt->execute([$result]);   #bind the parameters
+			
+			$sql = "delete from Sponsors where company_name = ?";
+			$stmt = $pdo->prepare($sql);   #create the query
+			$stmt->execute([$result]);   #bind the parameters
+			
 			$sql = "delete from Company where company_name = ?";
 			$stmt = $pdo->prepare($sql);   #create the query
 			$stmt->execute([$result]);   #bind the parameters
+			
 			echo"<p>Done</p>";
 	}
 ?>
